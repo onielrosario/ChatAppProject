@@ -44,14 +44,36 @@ class LoginViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
         return button
         
     }()
     
+    func handleLogin() {
+        guard let email = emailTF.text,
+            let password = passwordTF.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+            
+        })
+    }
+    
+    @objc func handleLoginRegister() {
+        if loginSegmentedControl.selectedSegmentIndex == 0 {
+            handleLogin()
+        } else {
+            handleRegister()
+        }
+    }
+    
+    
     @objc func loginPressed() {
         let title = loginSegmentedControl.titleForSegment(at: loginSegmentedControl.selectedSegmentIndex)
-        loginSegmentedControl.setTitle(title, forSegmentAt: loginSegmentedControl.selectedSegmentIndex)
+        loginButton.setTitle(title, for: .normal)
         
         //handle login constrainer
         inputContainerViewHeightAnchor?.constant = loginSegmentedControl.selectedSegmentIndex == 0 ? 100 : 150
@@ -92,6 +114,8 @@ class LoginViewController: UIViewController {
                     print(error)
                     return
                 }
+                
+                self.dismiss(animated: true, completion: nil)
                 print("saved user successfully")
             })
         })
@@ -166,7 +190,7 @@ class LoginViewController: UIViewController {
         profileimage.widthAnchor.constraint(equalToConstant: 150).isActive = true
         profileimage.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
-
+    
     var inputContainerViewHeightAnchor: NSLayoutConstraint?
     var nameTextfieldHeightAnchor: NSLayoutConstraint?
     var emailTextFieldAnchor: NSLayoutConstraint?
@@ -177,7 +201,7 @@ class LoginViewController: UIViewController {
         inputContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         inputContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
         inputContainerViewHeightAnchor = inputContainerView.heightAnchor.constraint(equalToConstant: 150)
-       inputContainerViewHeightAnchor?.isActive = true
+        inputContainerViewHeightAnchor?.isActive = true
         
         //add subviews
         inputContainerView.addSubview(nameTF)
@@ -209,7 +233,7 @@ class LoginViewController: UIViewController {
         emailTF.leftAnchor.constraint(equalTo: inputContainerView.leftAnchor, constant: 12).isActive = true
         emailTF.topAnchor.constraint(equalTo: nameTF.bottomAnchor).isActive = true
         emailTF.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive = true
-       emailTextFieldAnchor = emailTF.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/3)
+        emailTextFieldAnchor = emailTF.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/3)
         emailTextFieldAnchor?.isActive = true
         
         //email sepatator
