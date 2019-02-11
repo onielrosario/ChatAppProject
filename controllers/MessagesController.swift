@@ -15,9 +15,20 @@ class MessagesController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogOut))
-        
+        checkIfUserIsLoggedIn()
+    }
+    
+    func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogOut), with: nil, afterDelay: 0)
+        } else {
+            let uid = Auth.auth().currentUser?.uid
+            Database.database().reference().child("user").child(uid!).observe(.value, with: { (snapShot) in
+                if let dictionary = snapShot.value as? [String: Any] {
+                   self.navigationItem.title = dictionary["name"] as? String
+                }
+
+            }, withCancel: nil)
         }
     }
 
