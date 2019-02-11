@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		097DD0D222122CBE00207688 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DD0D122122CBE00207688 /* NewMessageController.swift */; };
 		098B97E02210B760001F2DFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098B97DF2210B760001F2DFE /* AppDelegate.swift */; };
 		098B97E22210B760001F2DFE /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098B97E12210B760001F2DFE /* MessagesController.swift */; };
 		098B97E72210B761001F2DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098B97E62210B761001F2DFE /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		097DD0D122122CBE00207688 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		098B97DC2210B760001F2DFE /* chatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098B97DF2210B760001F2DFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		098B97E12210B760001F2DFE /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				098B97E12210B760001F2DFE /* MessagesController.swift */,
+				097DD0D122122CBE00207688 /* NewMessageController.swift */,
 				098B97F12210B969001F2DFE /* LoginViewController.swift */,
 			);
 			path = controllers;
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097DD0D222122CBE00207688 /* NewMessageController.swift in Sources */,
 				098B97F22210B969001F2DFE /* LoginViewController.swift in Sources */,
 				098B97E22210B760001F2DFE /* MessagesController.swift in Sources */,
 				098B97E02210B760001F2DFE /* AppDelegate.swift in Sources */,

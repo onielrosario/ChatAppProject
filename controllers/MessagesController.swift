@@ -13,9 +13,14 @@ class MessagesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogOut))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "create"), style: .plain, target: self, action: #selector(createPressed))
         checkIfUserIsLoggedIn()
+    }
+    
+    @objc private func createPressed() {
+        let newMessageVC = NewMessageController()
+        present(UINavigationController.init(rootViewController: newMessageVC), animated: true, completion: nil)
     }
     
     func checkIfUserIsLoggedIn() {
