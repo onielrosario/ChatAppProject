@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		097DD0D222122CBE00207688 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DD0D122122CBE00207688 /* NewMessageController.swift */; };
+		097DD0D5221231D100207688 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DD0D4221231D100207688 /* Users.swift */; };
 		098B97E02210B760001F2DFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098B97DF2210B760001F2DFE /* AppDelegate.swift */; };
 		098B97E22210B760001F2DFE /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098B97E12210B760001F2DFE /* MessagesController.swift */; };
 		098B97E72210B761001F2DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098B97E62210B761001F2DFE /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		097DD0D122122CBE00207688 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		097DD0D4221231D100207688 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		098B97DC2210B760001F2DFE /* chatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098B97DF2210B760001F2DFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		098B97E12210B760001F2DFE /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
@@ -54,9 +56,18 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		097DD0D32212318E00207688 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				097DD0D4221231D100207688 /* Users.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		098B97D32210B760001F2DFE = {
 			isa = PBXGroup;
 			children = (
+				097DD0D32212318E00207688 /* model */,
 				097DD0D022122C3600207688 /* SupportingFiles */,
 				098B97F32210D655001F2DFE /* controllers */,
 				098B97DE2210B760001F2DFE /* chatApp */,
@@ -238,6 +249,7 @@
 			files = (
 				097DD0D222122CBE00207688 /* NewMessageController.swift in Sources */,
 				098B97F22210B969001F2DFE /* LoginViewController.swift in Sources */,
+				097DD0D5221231D100207688 /* Users.swift in Sources */,
 				098B97E22210B760001F2DFE /* MessagesController.swift in Sources */,
 				098B97E02210B760001F2DFE /* AppDelegate.swift in Sources */,
 			);
