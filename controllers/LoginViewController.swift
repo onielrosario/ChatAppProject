@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
         imageView.image = UIImage(named: "placeholder-image")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+      
         return imageView
     }()
     
